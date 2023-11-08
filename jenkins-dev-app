@@ -8,7 +8,7 @@ pipeline {
         }
         stage ("Deploy") {
             steps {
-                sh "sudo cp /var/lib/jenkins/workspace/slave1nodejob1/index.html /var/www/html/" 
+                sh "sudo cp /var/lib/jenkins/workspace/pipeline-02/index.html /var/www/html/" 
             }
         }
     }
