@@ -1,0 +1,15 @@
+pipeline {
+    agent {label "mntech-dev-app" }
+    stages {
+        stage ("clone") {
+            steps {
+                checkout scm
+            }
+        }
+        stage ("Deploy") {
+            steps {
+                sh "sudo cp /var/lib/jenkins/workspace/slave1nodejob1/index.html /var/www/html/" 
+            }
+        }
+    }
+}
