@@ -1,0 +1,19 @@
+pipeline {
+    agent { label "Ansible-Master-Server" }
+    stages {
+        stage ('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage ('Run Ansible') {
+            steps {
+                script {
+                    sh 'sudo -u ansible ansible-playbook /var/lib/jenkins/workspace/${JOB_NAME}/httpd.yml'
+                }
+            }
+        }
+    }
+}
+
