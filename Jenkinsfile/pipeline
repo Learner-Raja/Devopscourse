@@ -1,28 +1,19 @@
 pipeline {
-    agent { label "Ansible-Master-Server" }
+    agent any
+
     stages {
-        stage ("clone playbook") {
+        stage('Checkout') {
             steps {
                 checkout scm
             }
         }
-        stage ("Users") {
+
+        stage('Run Ansible') {
             steps {
                 script {
-                    sh "/var/lib/jenkins/workspace/Ansible-pipeline/httpd.yml"
-                    sh "ansible-playbook httpd.yml"
+                    sh 'sudo -u ansible ansible-playbook /var/lib/jenkins/workspace/${JOB_NAME}/httpd.yml'
                 }
             }
         }
     }
-    post {
-        success {
-            echo "The Build is sucess"
-        }
-        failure {
-            echo "The Build is failed"
-        }
-    }
 }
-
-
