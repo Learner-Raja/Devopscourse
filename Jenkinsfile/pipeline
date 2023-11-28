@@ -9,7 +9,8 @@ pipeline {
         stage ("Users") {
             steps {
                 script {
-                    sh "/var/lib/jenkins/workspace/Ansible-pipeline/httpd.yml /ansible-playbook httpd.yml"
+                    sh "/var/lib/jenkins/workspace/Ansible-pipeline/httpd.yml"
+                    sh "ansible-playbook httpd.yml"
                 }
             }
         }
