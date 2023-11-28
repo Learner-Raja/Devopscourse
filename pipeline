@@ -1,0 +1,27 @@
+pipeline {
+    agent { label "Ansible-Server" }
+    stages {
+        stage ("clone playbook") {
+            steps {
+                checkout scm
+            }
+        }
+        stage ("Users") {
+            steps {
+                script {
+                    sh "/var/lib/jenkins/workspace/Ansible-pipeline/httpd.yml /ansible-playbook playbook.yml"
+                }
+            }
+        }
+    }
+    post {
+        success {
+            echo "The Build is sucess"
+        }
+        failure {
+            echo "The Build is failed"
+        }
+    }
+}
+
+
