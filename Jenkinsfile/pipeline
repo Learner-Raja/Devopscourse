@@ -1,14 +1,13 @@
 pipeline {
     agent any
-
     stages {
-        stage('Checkout') {
+        stage ('Checkout') {
             steps {
                 checkout scm
             }
         }
 
-        stage('Run Ansible') {
+        stage ('Run Ansible') {
             steps {
                 script {
                     sh 'sudo -u ansible ansible-playbook /var/lib/jenkins/workspace/${JOB_NAME}/httpd.yml'
