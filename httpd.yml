@@ -3,6 +3,7 @@
 - name: This is to install httpd
   hosts: Dev
   become: yes
+  become_user: ansible
   gather_facts: yes
   tasks:
    - name: install httpd
@@ -13,4 +14,8 @@
      ansible.builtin.service:
        name: httpd
        state: started
+   - name: start apache
+     ansible.builtin.service:
+       name: httpd
+       enabled: yes
 
