@@ -13,8 +13,14 @@ pipeline {
                     sh 'sudo -u ansible ansible-playbook /var/lib/jenkins/workspace/${JOB_NAME}/httpd.yml'
                 }
             }
-        }    
+        }
+        stage ("Deploy") {
+            steps {
+                sh "sudo cp /var/lib/jenkins/workspace/${JOB_NAME}/index.html /var/www/html/" 
+            }
+        }
     }
 }
+
 
 
