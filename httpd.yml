@@ -15,7 +15,7 @@
        state: started
    - name: Copy file
      copy:
-        src: /var/lib/jenkins/workspace/${JOB_NAME}/index.html
+        src: /var/lib/jenkins/workspace/Ansible-pipeline/index.html
         dest: /var/www/html/
 
 
