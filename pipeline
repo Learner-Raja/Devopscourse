@@ -14,18 +14,6 @@ pipeline {
                 }
             }
         }
-        stage ("Copy") {
-            steps {
-                sh "sudo cp /var/lib/jenkins/workspace/${JOB_NAME}/index.html /tmp"
-            }
-        }
-        stage ("Deploy") {
-            steps {
-                script {
-                    sh 'sudo -u ansible ansible-playbook /var/lib/jenkins/workspace/${JOB_NAME}/copy.yml'
-                }
-            }
-        }
     }
 }
 
