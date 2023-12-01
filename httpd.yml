@@ -14,7 +14,7 @@
        name: httpd
        state: started
    - name: Copy file
-      copy:
+     copy:
         src: /var/lib/jenkins/workspace/${JOB_NAME}/index.html
         dest: /var/www/html/
 
