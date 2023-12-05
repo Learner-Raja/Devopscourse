@@ -1,2 +1,2 @@
 # Devopscourse
-this repo is created for devops course practice
+web-deployment through ansible playbook with jenkins pipeline
