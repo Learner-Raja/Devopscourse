@@ -1,2 +1,2 @@
-# web-deployment through Ansible
-web-deployment through ansible playbook with jenkins pipeline
+# Automate Web Deployment - Ansible
+Implemented apache website through Ansible yml file and automate using Jenkins declarative pipeline which clone the code from GitHub repo and run on EC2 Instances.
